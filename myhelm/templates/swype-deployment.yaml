@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-swype-app
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-swype-app
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-swype-app
+    spec:
+      containers:
+        - name: stripe
+          image: {{ .Values.swype.image }}
+          ports:
+            - containerPort: 5003
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          resources:
+            limits:
+              cpu: {{ .Values.cpuLimit }}
+              memory: {{ .Values.memoryLimit }}
