@@ -13,10 +13,10 @@ spec:
         app: {{ .Release.Name }}-swype-app
     spec:
       containers:
-        - name: stripe
+        - name: swype
           image: {{ .Values.swype.image }}
           ports:
-            - containerPort: 5003
+            - containerPort: 5008
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           resources:
             limits:

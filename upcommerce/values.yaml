@@ -5,5 +5,7 @@ memoryLimit: "4Gi"
 upcommerce:
   image: uonyeka/upcommerce:v3
 swype:
-  image: uonyeka/stripe:linux-amd64
+  image: uonyeka/swype:linux-amd64
+canary:
+  image: uonyeka/canary:linux-amd64
 
